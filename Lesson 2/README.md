@@ -41,3 +41,22 @@ ______
 
 - A (3,6); B (2,1) -> 5,09
 - A (7,-5); B (1,-1) -> 7,21
+
+____________________
+# Прочие материалы #
+
+Книги для изучения. 
+
+Рекомедую читать именно в таком порядке:
+Byte of Python, Swaroop C. H.
+Грокаем алгоритмы, Адитья Бхаргава
+Изучаем Python (1, 2 том), Марк Лутц
+
+IDE, которую использовал на семинаре: 
+
+https://www.onlinegdb.com/online_python_compiler
+
+PyCharm: https://www.jetbrains.com/ru-ru/pycharm/
+
+
+Дзен Python: https://tyapk.ru/blog/post/the-zen-of-python
