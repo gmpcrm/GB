@@ -1,7 +1,6 @@
 count = 0
 while count < 1:
-    print("Задайте количество элементов > 0:")
-    count = int(input())
+    count = int(input("Задайте количество элементов > 0:"))
 
 data = list(range(-count, count + 1))
 size = len(data)
@@ -12,8 +11,8 @@ positions = input().split(" ")
 
 result = 1
 for value in positions:
-    index = int(value)
-    if index > 0 and index <= size:
-        result *= data[index - 1]
+    idx = int(value)
+    if 0 < idx <= size:
+        result *= data[idx - 1]
 
 print(result)

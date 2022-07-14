@@ -1,7 +1,6 @@
 n = 0
 while n < 1:
-    print("Введите целое число > 0:")
-    n = int(input())
+    n = int(input("Введите целое число > 0:"))
 
 nums = {}
 for idx in range(1, n + 1):

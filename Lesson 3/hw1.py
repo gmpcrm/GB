@@ -1,5 +1,4 @@
-print("Введите число:")
-str = input()
+str = input("Введите число:")
 
 result = 0
 for value in str:
