@@ -1,6 +1,6 @@
 data = [1.1, 1.2, 3.1, 5, 10.01]
 
-def min(data):
+def fmin(data):
     result = 0
     for value in data:
         f = value % 1
@@ -12,7 +12,7 @@ def min(data):
     
     return result
 
-def max(data):
+def fmax(data):
     result = 0
     for value in data:
         f = value % 1
@@ -24,5 +24,5 @@ def max(data):
     
     return result
 
-result = max(data) - min(data)
+result = fmax(data) - fmin(data)
 print(f"{result:.2f}")
