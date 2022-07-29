@@ -7,6 +7,7 @@ while k < 1 or k > 32:
 nums = [random.randrange(0, k) for value in range(0, 32)]
 print(nums)
 
+
 d = {}
 for num in nums:
     d[num] = d.get(num, 0) + 1
