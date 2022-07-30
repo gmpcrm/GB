@@ -1,8 +1,9 @@
 import random
+import os
 
 path = "c:\\Users\\jonson\\Dropbox\\Projects\\GB\\Lesson 5" 
 file = "polynomial.txt"
-filename = path + "\\" + file
+filename = os.path.join(path, file)
 
 k = 0
 while k < 1:

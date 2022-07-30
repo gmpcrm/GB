@@ -7,5 +7,6 @@ while k < 1 or k > 32:
 nums = sorted([random.randrange(0, k) for value in range(0, 32)])
 print(nums)
 
+#оптимизация
 result = [val for val in nums if nums.count(val) == 1]
 print(result)

@@ -1,16 +1,24 @@
-data = "aaaaabcccccddddeeeefffffffffffffffffggggghhhhhhhhhhhhiiiiijjjjkkkkkklllllllllllllmmmmmnnoop"
+import os
+#data = "aaaaabcccccddddeeeefffffffffffffffffggggghhhhhhhhhhhhiiiiijjjjkkkkkklllllllllllllmmmmmnnoop"
 
-count = 0
+path = "c:\\Users\\jonson\\Dropbox\\Projects\\GB\\Lesson 6" 
+file = "rledata.txt"
+filename = os.path.join(path, file)
+
 result = ""
-prev = ""
-for c in data:
-    if c != prev:
-        if prev != "":
-            result += str(count) + prev
-        count = 1
-        prev = c
-    else:
-        count += 1
+with open(filename, 'r') as f:
+    data = f.read()
+    count = 0
+    prev = ""
+    for c in data:
+        if c != prev:
+            if prev != "":
+                result += str(count) + prev
+            count = 1
+            prev = c
+        else:
+            count += 1
+    
+    result += str(count) + prev
 
-result += str(count) + prev
 print(result)
