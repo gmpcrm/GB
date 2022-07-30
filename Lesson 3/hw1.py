@@ -1,8 +1,12 @@
 str = input("Введите число:")
+#str = "123.456789"
 
-result = 0
-for value in str:
-    if value.isdigit():
-        result += int(value)
+#оптимизация
+result = sum(map(int,filter(lambda c: c.isdigit(), str)))
+
+# result = 0
+# for value in str:
+#     if value.isdigit():
+#         result += int(value)
 
 print(result)
