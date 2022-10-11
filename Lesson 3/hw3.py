@@ -1,13 +1,8 @@
-n = 0
-while n < 1:
-    n = int(input("Введите целое число > 0:"))
+str = input("Введите строку:")
+#astr1 = "абыр абыр абырвалг фывапролдж зимбабве абыр анадысь абыр внутре абыр нейронка абвера"
 
-nums = {}
-for idx in range(1, n + 1):
-    nums[idx] = (1 + 1/idx)**idx
+substr = input("Введите подстроку:")
+#str2 = "абыр"
 
-result = 0
-for value in nums.values():
-    result += value
-
-print(f"{result:.2f}")
+result = len(list(filter(lambda v: v == substr, str.split(" "))))
+print(result)

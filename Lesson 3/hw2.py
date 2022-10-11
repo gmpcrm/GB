@@ -1,6 +1,6 @@
 n = 0
 while n < 1:
-    n = int(input("Введите значение > 0:"))
+    n = int(input("Введите целое число > 0:"))
 
 def calc(count):
     result = 1
