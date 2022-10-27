@@ -14,4 +14,4 @@ while d * d <= n:
 if n > 1:
     result.append(n)
 
-print(result)
+print('Список простых множителей:', result)

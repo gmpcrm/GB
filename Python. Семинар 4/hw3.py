@@ -1,9 +1,6 @@
 import random
-import os
 
-path = "c:\\Users\\jonson\\Dropbox\\Projects\\GB\\Lesson 5" 
-file = "polynomial.txt"
-filename = os.path.join(path, file)
+filename = "files\polynomial.txt"
 
 k = 0
 while k < 1:
@@ -17,7 +14,7 @@ str = (" ".join(
 for v in [(random.randrange(0,100), k - value) for value in range(0, k + 1)]]))]
 ).replace(" 1*x", " x"))[:-1] + "= 0"
 
-print(str)
+print('Многочлен степени k:', str)
 with open(filename, 'a') as f:
     f.write(str)
     f.write("\n")
