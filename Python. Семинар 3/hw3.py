@@ -24,5 +24,6 @@ def fmax(data):
     
     return result
 
+print('Список из вещественных чисел:', data)
 result = fmax(data) - fmin(data)
-print(f"{result:.2f}")
+print(f"Разница между максимальным и минимальным значением дробной части элементов: {result:.2f}")

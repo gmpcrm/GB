@@ -8,4 +8,4 @@ while n > 0:
 if len(result) == 0:
     result = "0"
 
-print(result)
+print('Двоичное число:', result)
