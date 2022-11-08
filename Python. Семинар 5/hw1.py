@@ -4,7 +4,7 @@ max_candy = 2021
 max_candy_per_turn = 28
 first_turn = True
 
-def player_turn(title):
+def player_turn(title, prev_count = 0):
     global first_turn
     first_turn = False
     count = 0
@@ -13,7 +13,7 @@ def player_turn(title):
         count = int(input(f"{title}: Сколько возьмете конфет (максимум {max_count})?"))
     return count
 
-def bot_turn(title):
+def bot_turn(title, prev_count = 0):
     global first_turn
     first_turn = False
     max_count = max_candy_per_turn if max_candy_per_turn < max_candy else max_candy
@@ -21,14 +21,13 @@ def bot_turn(title):
     print(f"{title}: Я взял {count} конфет(ы)!")
     return count
 
-def smart_bot_turn(title):
+def smart_bot_turn(title, prev_count = 0):
     global first_turn
     if first_turn:
-        count = 5
+        count = max_candy % (max_candy_per_turn + 1)
         first_turn = False
     else:
-        max_count = max_candy_per_turn if max_candy_per_turn < max_candy else max_candy
-        count = max_count if max_count <= max_candy_per_turn else random.randrange(1, max_count)
+        count = max_candy if max_candy <= max_candy_per_turn else max_candy_per_turn - prev_count + 1
     print(f"{title}: Я взял {count} конфет(ы)!")
     return count
 
@@ -57,10 +56,11 @@ players = all_players[mode - 1]
 if random.randint(0,2):
     players[0],players[1] = players[1],players[0]
 
+count = 0
 print(players[0][0] + " играет первым!")
 while max_candy > 0:
     for player in players:
-        count = player[1](player[0])
+        count = player[1](player[0], count)
         max_candy -= count
         if max_candy:
             print(f"Осталось {max_candy} конфет(ы)")
