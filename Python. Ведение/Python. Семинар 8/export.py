@@ -59,13 +59,3 @@ def save_data(target, mode, data: pd.DataFrame):
 def export_file(target, mode):
     df = ab_import.load_data(database)
     return save_data(target, mode, df)
-
-def export_data():
-    mode = ""
-    while mode not in supported_export:
-        mode = input("Введите режим экспорта (" + ", ".join(supported_export) + "):")
-
-    filename = input("Введите имя файла для экспорта:")
-    export_file(filename, mode)
-    print(f"Данные были экспортирваны в {filename}")
-    return
