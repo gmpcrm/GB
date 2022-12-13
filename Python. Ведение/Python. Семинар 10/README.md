@@ -12,6 +12,7 @@
 Вывод данных учителей
 ![Screenshot](teachers.png)
 
+
 Вывод данных учеников
 ![Screenshot](students.png)
 
