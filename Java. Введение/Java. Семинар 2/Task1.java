@@ -1,21 +1,28 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Task1 {
   public static void main(String[] args) throws Exception {
-    var json = "{\"name\":\"Ivanov\", \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"}";
+    String json = "{\"name\":\"Ivanov\", \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"}";
 
-    var strs = json.replace("\"","").replace("{","").replace("}","").split(",");
+    Pattern pattern = Pattern.compile("\"(.*?)\":\"(.*?)\"");
+    Matcher matcher = pattern.matcher(json);
+
     StringBuilder sb = new StringBuilder();
     sb.append("SELECT * FROM students WHERE ");
-    
-    for (var str: strs){
-      var key = str.split(":")[0].trim();
-      var value = str.split(":")[1].trim();
 
-      if (!value.equals("null")){
-        if (sb.length() > 30){
+    boolean first = true;
+    while (matcher.find()) {
+      String key = matcher.group(1);
+      String value = matcher.group(2);
+
+      if (!value.equals("null")) {
+        if (!first) {
           sb.append(" AND ");
         }
+        first = false;
 
-        sb.append(key + " = '" + value + "'");      
+        sb.append(key + " = '" + value + "'");
       }
     }
 
