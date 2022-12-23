@@ -6,15 +6,15 @@ k = 0
 while k < 1:
     k = int(input("Задайте натуральную степень (целое число > 0):"))
 
-str = (" ".join(
-[v[0] + " " + v[1] for v in list(filter(lambda v: len(v[0]) > 0,
-[("" + (str(v[0]) + ("*" if v[1] > 0 else "") if v[0] > 0 else "") + ("x" if v[1] > 0 else "") 
-+ ("^" + str(v[1]) if v[1] > 1 else "") if v[0] else "", 
-("+" if random.randrange(0,2) else "-")) 
-for v in [(random.randrange(0,100), k - value) for value in range(0, k + 1)]]))]
-).replace(" 1*x", " x"))[:-1] + "= 0"
+coefficients = [(random.randrange(0, 100), k - value) for value in range(0, k + 1)]
+filtered_coefficients = list(filter(lambda v: v[0] != 0, coefficients))
 
-print('Многочлен степени k:', str)
+polynomial_str = " ".join([f"{v[0]}x^{v[1]}" if v[1] > 1 else f"{v[0]}x" if v[1] == 1 else f"{v[0]}" for v in filtered_coefficients])
+polynomial_str += "= 0"
+
+print('Многочлен степени k:', polynomial_str)
+
+# Записываем строку в файл
 with open(filename, 'a') as f:
-    f.write(str)
+    f.write(polynomial_str)
     f.write("\n")

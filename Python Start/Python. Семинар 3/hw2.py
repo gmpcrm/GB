@@ -1,15 +1,10 @@
 def calculate(data):
     print('Список:', data)
-    result = []
     count = len(data)
-    for idx in range(int(count/2)):
-        result.append(data[idx] * data[-idx - 1])
-
+    result = [data[idx] * data[-idx - 1] for idx in range(int(count/2))]
     if count % 2 == 1:
-        idx = int(count/2)
-        result.append(data[idx] * data[idx])
-
-    print('Произведение пар чисел списка:', result)    
+        result.append(data[int(count/2)] ** 2)
+    print('Произведение пар чисел списка:', result)
     return result
 
 calculate([2, 3, 5, 6])
