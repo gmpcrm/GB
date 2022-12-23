@@ -19,8 +19,8 @@ public class Task1 {
       if (!value.equals("null")) {
         if (!first) {
           sb.append(" AND ");
+          first = false;
         }
-        first = false;
 
         sb.append(key + " = '" + value + "'");
       }
