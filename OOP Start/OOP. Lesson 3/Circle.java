@@ -1,4 +1,4 @@
-class Circle extends Shape {
+class Circle extends BaseShape {
     private double radius;
 
     public Circle(double radius) throws InvalidShapeException {
@@ -13,8 +13,7 @@ class Circle extends Shape {
         return "Круг";
     }
 
-    @Override
-    double getPerimeter() {
+    double getCircleLength() {
         return 2 * Math.PI * radius;
     }
 

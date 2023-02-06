@@ -1,5 +1,4 @@
-abstract class Shape {
+abstract class BaseShape {
     abstract String getName();
-    abstract double getPerimeter();
     abstract double getArea();
 }

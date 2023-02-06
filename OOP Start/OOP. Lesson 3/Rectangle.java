@@ -1,12 +1,6 @@
-class Rectangle extends Shape {
-    private double length, width;
-
+class Rectangle extends PolygonalShape {
     public Rectangle(double length, double width) throws InvalidShapeException {
-        if(length <= 0 || width <= 0)
-            throw new InvalidShapeException("Неправильный ввод: длина и ширина должны быть положительными числами: " + length + ", " + width + ".");
-        
-        this.length = length;
-        this.width = width;
+        super(new double[] { length, width, length, width });
     }
 
     @Override
@@ -15,12 +9,7 @@ class Rectangle extends Shape {
     }
 
     @Override
-    double getPerimeter() {
-        return 2 * (length + width);
-    }
-
-    @Override
     double getArea() {
-        return length * width;
+        return sides[0] * sides[1];
     }
 }

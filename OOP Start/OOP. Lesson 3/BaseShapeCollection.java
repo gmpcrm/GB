@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class ShapeCollection {
-    private List<Shape> shapes = new ArrayList<>();
+class BaseShapeCollection {
+    private List<BaseShape> shapes = new ArrayList<>();
     
-    public void addShape(Shape shape) {
+    public void addShape(BaseShape shape) {
         shapes.add(shape);
     }
     
-    public void removeShape(Shape shape) {
+    public void removeShape(BaseShape shape) {
         try {
             shapes.remove(shape);
         }
@@ -26,7 +26,7 @@ class ShapeCollection {
         }
     }
     
-    public void changeShape(int index, Shape shape) {
+    public void changeShape(int index, BaseShape shape) {
         try {
             shapes.set(index, shape);
         }
@@ -40,17 +40,28 @@ class ShapeCollection {
     }
 
     public void printAllShapesInfo() {
-        for (Shape shape : shapes) {
+        for (BaseShape shape : shapes) {
             System.out.println("Фигура: " + shape.getName());
-            System.out.println("Периметр: " + shape.getPerimeter());
+            if (shape instanceof PolygonalShape){
+                PolygonalShape polygonalShape = (PolygonalShape)shape;
+                System.out.println("Периметр: " + polygonalShape.getPerimeter());
+            }
+            else if (shape instanceof Circle){
+                Circle circle = (Circle)shape;
+                System.out.println("Длина окружности: " + circle.getCircleLength());
+            }
+
             System.out.println("Площадь: " + shape.getArea());
         }
     }
 
     public double calculatePerimeter() {
         double perimeter = 0;
-        for (Shape shape : shapes) {
-            perimeter += shape.getPerimeter();
+        for (BaseShape shape : shapes) {
+            if (shape instanceof PolygonalShape){
+                PolygonalShape polygonalShape = (PolygonalShape)shape;
+                perimeter += polygonalShape.getPerimeter();
+            }
         }
 
         return perimeter;
@@ -58,7 +69,7 @@ class ShapeCollection {
 
     public double calculateArea() {
         double area = 0;
-        for (Shape shape : shapes) {
+        for (BaseShape shape : shapes) {
             area += shape.getArea();
         }
 

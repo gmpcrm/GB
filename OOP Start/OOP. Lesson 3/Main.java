@@ -1,13 +1,13 @@
 public class Main {
     public static void main(String[] args) {
         try {
-            ShapeCollection collection = new ShapeCollection();
+            BaseShapeCollection collection = new BaseShapeCollection();
             collection.addShape(new Triangle(3, 4, 5));
             collection.addShape(new Square(10));                
             collection.addShape(new Rectangle(3, 4));
             collection.addShape(new Circle(5));
 
-            Shape triangle = new Triangle(10, 15, 20);
+            PolygonalShape triangle = new Triangle(10, 15, 20);
             collection.addShape(triangle);
 
             // напечатать периметр и площадь всех фигур
