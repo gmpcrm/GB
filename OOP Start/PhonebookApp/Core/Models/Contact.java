@@ -1,4 +1,4 @@
-package Phonebook.Core.Models;
+package PhonebookApp.Core.Models;
 
 import java.time.LocalDate;
 
