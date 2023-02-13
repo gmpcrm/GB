@@ -1,6 +1,8 @@
 {
     "java.project.sourcePaths": [
         "OOP Start/OOP. Lesson 3",
-        "OOP Start/OOP. Lesson 2"
+        "OOP Start/OOP. Lesson 2",
+        "OOP Start/Lesson_11",
+        "OOP Start/Phonebook"
     ]
 }
