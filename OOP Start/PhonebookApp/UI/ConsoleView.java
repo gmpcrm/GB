@@ -4,9 +4,6 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 import PhonebookApp.Config;
-import PhonebookApp.Core.MVP.CSVModel;
-import PhonebookApp.Core.MVP.Model;
-import PhonebookApp.Core.MVP.PlainTextModel;
 import PhonebookApp.Core.MVP.View;
 
 public class ConsoleView implements View {
@@ -89,48 +86,12 @@ public class ConsoleView implements View {
 
     @Override
     public void setDescription(String value) {
-        System.out.printf("Description: %s\n", value);        
+        System.out.printf("Description: %s\n", value);
+        System.out.println();      
     }
     
     @Override
-    public Model importModel(String mode, String path) {
-        Model model = null;
-        if (mode.equals("csv")) {
-            System.out.println("Enter CSV file name: ");
-            model = new CSVModel(in.next());
-        }
-        if (mode.equals("txt")) {
-            System.out.println("Enter TXT file name: ");
-            model = new PlainTextModel(in.next());
-        }
-
-        if (model != null){
-            model.load();
-        }
-
-        return null;
-    }
-
-    @Override
-    public void exportModel(Model source, String mode, String path) {
-        Model model = null;
-        if (mode.equals("csv")) {
-            System.out.println("Enter CSV file name: ");
-            model = new CSVModel(in.next());
-        }
-        if (mode.equals("txt")) {
-            System.out.println("Enter TXT file name: ");
-            model = new PlainTextModel(in.next());
-        }
-
-        if (model != null){
-            model.join(source);
-            model.save();
-        }
-    }
-
-    @Override
-    public Model importData() {
+    public String[] getImportInfo() {
         System.out.println("0 return, 1 Import from CSV, 2 Import from TXT");
         String key = in.next();
         while (true) {
@@ -138,9 +99,9 @@ public class ConsoleView implements View {
                 case "0":
                     return null;
                 case "1":
-                    return importModel("csv", in.next());
+                    return new String[] {"csv", in.next()};
                 case "2":
-                    return importModel("txt", in.next());
+                    return new String[] {"txt", in.next()};
                 default:
                     System.out.println("No such command");
                     break;
@@ -149,23 +110,28 @@ public class ConsoleView implements View {
     }
 
     @Override
-    public void exportData(Model source) {
+    public String[] getExportInfo() {
         System.out.println("0 return, 1 Export to CSV, 2 Export to TXT");
         String key = in.next();
         while (true) {
             switch (key) {
                 case "0":
-                    return;
+                    return null;
                 case "1":
-                    exportModel(source, "csv", in.next());
-                    return;
+                    return new String[] {"csv", in.next()};
                 case "2":
-                    exportModel(source, "txt", in.next());
-                    return;
+                    return new String[] {"txt", in.next()};
                 default:
                     System.out.println("No such command");
                     break;
             }
         }
+    }
+
+    @Override
+    public String[] getSearchInfo() {
+        System.out.print("Enter query string: ");
+        String key = in.next();
+        return new String[] { key };
     }
 }

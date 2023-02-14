@@ -44,6 +44,9 @@ public class App {
                     case "7":
                         presenter.importData();
                         break;
+                    case "8":
+                        presenter.search();
+                        break;
                     case "9":
                         return;
                     default:

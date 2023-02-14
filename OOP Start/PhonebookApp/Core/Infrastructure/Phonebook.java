@@ -49,12 +49,16 @@ public class Phonebook {
         return contains(index) ? contacts.get(index) : null;
     }
 
+    public int getContactIndex(Contact contact) {
+        return contacts.indexOf(contact);
+    }
+
     // update
     // ???...
 
     // delete
     public boolean remove(Contact contact) {
-        if (contacts.indexOf(contact) != -1) {
+        if (getContactIndex(contact) != -1) {
             contacts.remove(contact);
             return true;
         }
@@ -69,6 +73,19 @@ public class Phonebook {
 
     public List<Contact> getContacts() {
         return contacts;
+    }
+
+    public List<Contact> search(String[] query) {
+        List<Contact> result = new ArrayList<Contact>();
+        if (query != null && query.length > 0) {
+            for (Contact contact : contacts) {
+                if (contact.toString().toLowerCase().contains(query[0].toLowerCase())) {
+                    result.add(contact);
+                }
+            }
+        }
+
+        return result;
     }
 
     public int count() {

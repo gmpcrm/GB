@@ -1,5 +1,7 @@
 package PhonebookApp.Core.MVP;
 
+import java.util.List;
+
 import PhonebookApp.Core.Models.Contact;
 
 public class Presenter {    
@@ -81,11 +83,48 @@ public class Presenter {
         }
     }
 
+    private Model createModel(String type, String path)
+    {
+        Model model = null;
+        if (type.equals("csv")) {
+            model = new CSVModel(path);
+        }
+        else if (type.equals("txt")) {
+            model = new PlainTextModel(path);
+        }
+        else {
+            throw new IllegalArgumentException("Unknown model type");
+        }
+
+        return model;
+    }
+
     public void importData() {
-        join(view.importData());
+        String[] info = view.getImportInfo();
+        if (info != null){
+            Model model = createModel(info[0], info[1]);
+            model.load();
+            join(model);
+        }
     }
 
     public void exportData() {
-        view.exportData(model);
-    }
+        String[] info = view.getExportInfo();
+        if (info != null){
+            Model model = createModel(info[0], info[1]);
+            model.join(this.model);
+            model.save();
+        }
+   }
+
+   public void search() {
+        String[] info = view.getSearchInfo();
+        if (info != null){
+            List<Integer> result = model.search(info);
+            if (result.size() > 0) {
+                model.setCurrentIndex(result.get(0));
+                updateCurrentView();
+            }
+        }
+   }
 }

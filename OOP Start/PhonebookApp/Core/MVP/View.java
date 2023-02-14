@@ -17,8 +17,7 @@ public interface View {
     void setEmail(String value);
     String getDescription();
     void setDescription(String value);
-    Model importModel(String mode, String path);
-    void exportModel(Model source, String mode, String path);
-    Model importData();
-    void exportData(Model source);
+    String[] getImportInfo();
+    String[] getExportInfo();
+    String[] getSearchInfo();
 }

@@ -1,5 +1,8 @@
 package PhonebookApp.Core.MVP;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import PhonebookApp.Core.Infrastructure.Phonebook;
 import PhonebookApp.Core.Models.Contact;
 
@@ -34,6 +37,16 @@ public abstract class Model {
 
     public void join(Model model) {
         currentBook.join(model.currentBook());
+    }
+
+    public List<Integer> search(String[] searchInfo) {
+        List<Contact> contacts = currentBook.search(searchInfo);
+        List<Integer> indexes = new ArrayList<Integer>();
+        for (Contact contact : contacts) {
+            indexes.add(currentBook.getContactIndex(contact));
+        }
+
+        return indexes;
     }
 
     public abstract void load();
