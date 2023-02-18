@@ -2,9 +2,6 @@ from Core.Infrastructure.Phonebook import Phonebook
 from Core.Models.Contact import Contact
 
 class Model:
-    currentBook: Phonebook
-    currentIndex: int
-
     def __init__(self):
         self.currentBook = Phonebook()
         self.currentIndex = 0
