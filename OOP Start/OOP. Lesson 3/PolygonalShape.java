@@ -1,4 +1,4 @@
-abstract class PolygonalShape extends BaseShape {
+abstract class PolygonalShape extends Shape {
     protected double sides[];
 
     public PolygonalShape(double shapes[]) throws InvalidShapeException {
@@ -17,9 +17,10 @@ abstract class PolygonalShape extends BaseShape {
 
     public double getPerimeter(){
         double perimeter = 0;
-        for (double shape : sides)
+        for (double shape : sides) {
             perimeter += shape;
+        }
         
-            return perimeter;
+        return perimeter;
     }
 }

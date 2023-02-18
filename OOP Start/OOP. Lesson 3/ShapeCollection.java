@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class BaseShapeCollection {
-    private List<BaseShape> shapes = new ArrayList<>();
+class ShapeCollection {
+    private List<Shape> shapes = new ArrayList<>();
     
-    public void addShape(BaseShape shape) {
+    public void addShape(Shape shape) {
         shapes.add(shape);
     }
     
-    public void removeShape(BaseShape shape) {
+    public void removeShape(Shape shape) {
         try {
             shapes.remove(shape);
         }
@@ -26,7 +26,7 @@ class BaseShapeCollection {
         }
     }
     
-    public void changeShape(int index, BaseShape shape) {
+    public void changeShape(int index, Shape shape) {
         try {
             shapes.set(index, shape);
         }
@@ -40,7 +40,7 @@ class BaseShapeCollection {
     }
 
     public void printAllShapesInfo() {
-        for (BaseShape shape : shapes) {
+        for (Shape shape : shapes) {
             System.out.println("Фигура: " + shape.getName());
             if (shape instanceof PolygonalShape){
                 PolygonalShape polygonalShape = (PolygonalShape)shape;
@@ -57,7 +57,7 @@ class BaseShapeCollection {
 
     public double calculatePerimeter() {
         double perimeter = 0;
-        for (BaseShape shape : shapes) {
+        for (Shape shape : shapes) {
             if (shape instanceof PolygonalShape){
                 PolygonalShape polygonalShape = (PolygonalShape)shape;
                 perimeter += polygonalShape.getPerimeter();
@@ -69,7 +69,7 @@ class BaseShapeCollection {
 
     public double calculateArea() {
         double area = 0;
-        for (BaseShape shape : shapes) {
+        for (Shape shape : shapes) {
             area += shape.getArea();
         }
 

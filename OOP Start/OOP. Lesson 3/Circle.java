@@ -1,4 +1,4 @@
-class Circle extends BaseShape {
+class Circle extends Shape {
     private double radius;
 
     public Circle(double radius) throws InvalidShapeException {

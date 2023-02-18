@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         try {
-            BaseShapeCollection collection = new BaseShapeCollection();
+            ShapeCollection collection = new ShapeCollection();
             collection.addShape(new Triangle(3, 4, 5));
             collection.addShape(new Square(10));                
             collection.addShape(new Rectangle(3, 4));
