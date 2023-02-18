@@ -1,3 +1,4 @@
+.gitignore
 .vs/ProjectSettings.json
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
@@ -9,3 +10,17 @@ Python. Ведение/Python. Семинар 9/calculator/token.txt
 Python. Ведение/Python. Семинар 9/tic-tac-toe/token.txt
 Python. Ведение/Python. Семинар 10/token.txt
 Python for Analytics/start.py
+OOP Start/OOP. Lesson 7/Core/Models/__pycache__/__init__.cpython-310.pyc
+OOP Start/OOP. Lesson 7/Core/Models/__pycache__/Contact.cpython-310.pyc
+OOP Start/OOP. Lesson 7/Core/MVP/__pycache__/__init__.cpython-310.pyc
+OOP Start/OOP. Lesson 7/Core/MVP/__pycache__/CSVModel.cpython-310.pyc
+OOP Start/OOP. Lesson 7/Core/MVP/__pycache__/Model.cpython-310.pyc
+OOP Start/OOP. Lesson 7/Core/MVP/__pycache__/PlainTextModel.cpython-310.pyc
+OOP Start/OOP. Lesson 7/Core/MVP/__pycache__/Presenter.cpython-310.pyc
+OOP Start/OOP. Lesson 7/Core/MVP/__pycache__/View.cpython-310.pyc
+OOP Start/OOP. Lesson 7/Core/Infrastructure/__pycache__/__init__.cpython-310.pyc
+OOP Start/OOP. Lesson 7/Core/Infrastructure/__pycache__/Phonebook.cpython-310.pyc
+OOP Start/OOP. Lesson 7/UI/__pycache__/__init__.cpython-310.pyc
+OOP Start/OOP. Lesson 7/UI/__pycache__/App.cpython-310.pyc
+OOP Start/OOP. Lesson 7/UI/__pycache__/ConsoleView.cpython-310.pyc
+OOP Start/OOP. Lesson 7/__pycache__/Config.cpython-310.pyc

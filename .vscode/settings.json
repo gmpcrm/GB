@@ -4,5 +4,8 @@
         "OOP Start/OOP. Lesson 2",
         "OOP Start/Lesson_11",
         "OOP Start"
+    ],
+    "python.analysis.extraPaths": [
+        "./OOP Start/OOP. Lesson 7/Core/Models"
     ]
 }
