@@ -4,7 +4,7 @@
 
 Вариант использования программы
 
-    usage: main.py [-h] {add,list,edit,delete}
+    usage: notes.py [-h] {add,list,edit,delete}
 
 В данной программе используются следующие параметры командной строки:
 
