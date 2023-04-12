@@ -1,9 +1,10 @@
 {
     "java.project.sourcePaths": [
+        "Toys",
         "OOP Start/OOP. Lesson 3",
         "OOP Start/OOP. Lesson 2",
         "OOP Start",
-        "Toys"
+        "Algorithms"
     ],
     "python.analysis.extraPaths": [
         "./OOP Start/OOP. Lesson 7/Core/Models"
