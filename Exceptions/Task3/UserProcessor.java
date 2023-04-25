@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class UserProcessor {
     public static void main(String[] args) {
-        // test();
+        test();
 
         try (Scanner scanner = new Scanner(System.in, "Cp866")) {
             System.out.println("Введите данные в следующем формате: Фамилия Имя Отчество Дата рождения (dd.MM.yyyy) Номер телефона (число) Пол (m или f):");
@@ -49,6 +49,7 @@ public class UserProcessor {
             {"Сергеев", "Сергей", "Сергеевич", "01.01.2100", "1234567890", "m"},
             {"Шишкин", "Илья", "Ильич", "15.08.2000", "1234567890", "y"},
             {"Некорректные", "данные"},
+            {"Некорректные", "данные", "данные", "данные", "данные", "данные", "данные"},
         };
 
         for (int i = 0; i < testCases.length; i++) {
@@ -92,9 +93,10 @@ public class UserProcessor {
         try {
             phoneNumber = Long.parseLong(phoneNumberString);
             if (phoneNumber < 0) {
-                throw new NumberFormatException("Отрицательный номер телефона: " + phoneNumberString);
+                throw new NumberFormatException();
             }
-        } catch (NumberFormatException e) {
+        } 
+        catch (NumberFormatException e) {
             throw new IllegalArgumentException("Неверный формат номера телефона: " + phoneNumberString, e);
         }
 
