@@ -27,7 +27,7 @@ public class UserProcessor {
 
     public static void test() {
         String[][] testCases = {
-            {"Иванов", "Иван", "Иванович", "01.01.2000", "1234567890", "m"},
+            {":Иванов", "Иван", "Иванович", "01.01.2000", "1234567890", "m"},
             {"Петров", "Петр", "Петрович", "30.02.2000", "1234567890", "m"},
             {"Сидоров", "Сидр", "Сидорович", "20.11.1999", "abcdefghij", "m"},
             {"Козлов", "Александр", "Алексеевич", "05.05.1985", "9876543210", "x"},
@@ -106,9 +106,14 @@ public class UserProcessor {
             throw new IllegalArgumentException("Неверный формат пола:" + genderString);
         }
 
-        String output = String.format("<%s><%s><%s><%s><%d><%c>", surname, name, patronymic, birthDateString, phoneNumber, gender);
-        Path filePath = Paths.get(surname + ".txt");
+        Path filePath;
+        try {
+            filePath = Paths.get(surname + ".txt");
+        } catch (InvalidPathException e) {
+            throw new IllegalArgumentException("Недопустимые символы в фамилии: " + surname, e);
+        }
 
+        String output = String.format("<%s><%s><%s><%s><%d><%c>", surname, name, patronymic, birthDateString, phoneNumber, gender);
         try (BufferedWriter writer = Files.newBufferedWriter(filePath, StandardOpenOption.CREATE, StandardOpenOption.APPEND)) {
             writer.write(output);
             writer.newLine();
