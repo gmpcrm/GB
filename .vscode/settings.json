@@ -1,7 +1,8 @@
 {
     "java.project.sourcePaths": [
+        "Exceptions/Task2",
         "Exceptions/Task1",
-        "Exceptions/Task2"
+        "Exceptions/Task3"
     ],
     "python.analysis.extraPaths": [
     ],
