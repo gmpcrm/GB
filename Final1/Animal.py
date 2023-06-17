@@ -3,3 +3,4 @@ class Animal:
         self.name = name
         self.commands = commands
         self.date_of_birth = date_of_birth
+        
