@@ -1,0 +1,9 @@
+DELETE FROM Hamster;
+DELETE FROM Cat;
+DELETE FROM Dog;
+DELETE FROM Camel;
+DELETE FROM Donkey;
+DELETE FROM Horse;
+DELETE FROM DomesticAnimal;
+DELETE FROM BeastOfBurden;
+DELETE FROM Animal;
